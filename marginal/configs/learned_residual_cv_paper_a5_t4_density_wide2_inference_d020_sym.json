@@ -1,0 +1,102 @@
+{
+  "name": "learned_residual_cv_paper_a5_t4_density_wide2_inference_d020_sym",
+  "seed": 20260906,
+  "alpha": 0.1,
+  "test_level": 0.05,
+  "ci_level": 0.95,
+  "mixture_p": 0.2,
+  "mixture_a": 5.0,
+  "oracle_nodes": 160,
+  "errors": [
+    "symmetric"
+  ],
+  "sample_sizes": [
+    1000,
+    2000,
+    4000,
+    8000,
+    16000
+  ],
+  "repetitions": 1000,
+  "batch_size": 10,
+  "g_estimator": "spacing",
+  "variance": "empirical",
+  "layers": [
+    {
+      "id": "learned_residual_cv_joint_r8_density_wide2",
+      "kind": "learned",
+      "m_bw_mult": 0.8,
+      "f_bw_mult": 0.65,
+      "y_bw_mult": 0.8,
+      "density_positive_part": true,
+      "min_neighbors": 12,
+      "bandwidth_pilot_size": 256,
+      "bandwidth_selection": {
+        "method": "inner_cv",
+        "folds": 3,
+        "max_points": 512,
+        "m_multipliers": [
+          0.5,
+          0.75,
+          1.0
+        ],
+        "z_scales": [
+          4.0,
+          5.0,
+          6.0,
+          8.0
+        ],
+        "f_multipliers": [
+          0.35,
+          0.5,
+          0.75,
+          1.0,
+          1.25,
+          1.5
+        ],
+        "y_multipliers": [
+          0.35,
+          0.5
+        ]
+      },
+      "density_estimator": "residual_loo",
+      "density_feature_selection": "inner_cv",
+      "density_feature_mode": "all",
+      "density_feature_candidates": [
+        "all",
+        "x_only"
+      ],
+      "direct_contrast": true,
+      "mean_bandwidth": "anisotropic"
+    }
+  ],
+  "studies": [
+    {
+      "name": "inference_d020",
+      "type": "inference",
+      "delta0": 0.2,
+      "gaps": [
+        0.0
+      ]
+    }
+  ],
+  "diagnostics": {
+    "enabled": false,
+    "every": 20,
+    "grid_side": 15,
+    "density_points": 0,
+    "density_radius": 0.35,
+    "b_nodes": 24,
+    "b_check_nodes": 0
+  },
+  "size_adjustment": {
+    "enabled": false,
+    "calibration_reps": 0
+  },
+  "mean_fn": "paper",
+  "methods": [
+    "semi",
+    "conf"
+  ],
+  "error_base": "t4"
+}

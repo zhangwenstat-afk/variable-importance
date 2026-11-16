@@ -1,0 +1,32 @@
+# Python caches and local environments
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.venv/
+venv/
+env/
+
+# Local editor and operating-system files
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+.env
+.env.*
+
+# New experiment outputs and downloaded source data
+/runs/
+/realdata/data/raw/
+/realdata/figures_rebuilt/
+
+# Restricted LUCAS inputs and derived observation-level files
+/realdata/data_restricted/*
+!/realdata/data_restricted/README.md
+!/realdata/data_restricted/.gitignore
+lucas.csv
+spectra10nm.npz
+LUCAS_Topsoil_2015_20200323.csv
+LUCAS2015_AncillaryData_20201007.csv
+LUCAS2015_Soil_Spectra_EU28.zip
