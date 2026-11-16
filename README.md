@@ -10,7 +10,7 @@ Delta(s0) = zeta_x(s0) - zeta_w(s0).
 
 Here, `zeta_x` and `zeta_w` are prediction-interval half-widths at coverage `1 - alpha`, optionally conditional on a baseline profile `S = s0`. Thus, `Delta` measures a reduction in **half-width**; the reduction in full interval length is `2 * Delta`. The manuscript tests `H0: Delta(s0) <= tau(s0)`. Simulation configurations call the threshold `delta0`.
 
-The simulation drivers, configurations, and estimators are included. Original Monte Carlo batch results are **not included in this repository**. The real-data directory includes prepared public analysis files, saved aggregate results for all four applications, and figures. LUCAS observation-level data and the derived spectral archive are **not included**; obtain authorized access and rebuild them as described in the [restricted-data notice](realdata/data_restricted/README.md).
+The simulation drivers, configurations, and estimators are included. The real-data directory includes prepared public analysis files, saved aggregate results for all four applications, and figures. LUCAS observation-level data and the derived spectral archive are **not included**; obtain authorized access and rebuild them as described in the [restricted-data notice](realdata/data_restricted/README.md).
 
 ## Directory structure
 
